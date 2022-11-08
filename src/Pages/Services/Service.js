@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ServiceCard from '../Shared/ServiceCard';
 
 const Service = () => {
@@ -25,6 +26,9 @@ const Service = () => {
                     service={service}
                     ></ServiceCard>)
                 }
+            </div>
+            <div className='text-center'>
+            <Link to=''><button className="btn btn-info">Explore More Places</button></Link>
             </div>
         </div>
     );
