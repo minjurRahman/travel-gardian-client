@@ -2,7 +2,7 @@ import React from 'react';
 
 const Slider = () => {
     return (
-        <div className="carousel w-full">
+        <div className="carousel mt-7 w-full">
   <div id="slide1" className="carousel-item relative w-full">
     <img src="https://businesshaunt.com/wp-content/uploads/2020/10/Top-10-Places-to-visit-in-Bangladesh.jpg" alt='' className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
