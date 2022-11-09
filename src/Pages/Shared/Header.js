@@ -10,16 +10,17 @@ const Header = () => {
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
         {
-          user?
-          <li className='font-semibold'><Link to='/login'>Login</Link></li>
-          :
+          user?.email ?
           <> 
           <li className='font-semibold'><Link to='/myreview'>My Review</Link></li>
           <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
           <li className='font-semibold'><Link to='/logout'>Logout</Link></li>
           </>
+          :
+          <> 
+          <li className='font-semibold'><Link to='/login'>Login</Link></li>
+          </>
         }
-        <li className='font-semibold'><Link to='/myreview'>My Review</Link></li>
         <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
     </>
 
