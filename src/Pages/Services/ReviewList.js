@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 const ReviewList = ({rev}) => {
-    console.log(rev.placeName)
-    const { placeName } = rev;
+    // console.log(rev)
+    const { placeName, customer, message, photoURL  } = rev;
     const  [review, setReview] = useState({});
 
 
@@ -15,8 +15,16 @@ const ReviewList = ({rev}) => {
     }, [placeName])
 
     return (
-        <div>
-            <h1>ReviewList: {review.length}</h1>
+        <div className='mb-4 p-4'>
+            <div className=''>
+                <img src={photoURL?.photoURL} alt="" />
+             <ul className=" bg-base-100 w-full">
+                <li>
+                    Name: {customer}
+                    <p>Review Details: {message}</p>
+                </li>
+             </ul>
+            </div>
         </div>
     );
 };

@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo1.png'
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
 
+  const { user } = useContext(AuthContext);
 
     const menuItems = <>
-
         <li className='font-semibold'><Link to='/'>Home</Link></li>
-        <li className='font-semibold'><Link to='/login'>Login</Link></li>
+        {
+          user?
+          <li className='font-semibold'><Link to='/login'>Login</Link></li>
+          :
+          <> 
+          <li className='font-semibold'><Link to='/myreview'>My Review</Link></li>
+          <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
+          <li className='font-semibold'><Link to='/logout'>Logout</Link></li>
+          </>
+        }
+        <li className='font-semibold'><Link to='/myreview'>My Review</Link></li>
+        <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
     </>
 
 
@@ -21,6 +33,7 @@ const Header = () => {
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         {menuItems}
+       
       </ul>
     </div>
     <Link to='/' className="w-12 rounded-full">

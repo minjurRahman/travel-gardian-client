@@ -16,7 +16,7 @@ const ServiceDetails = () => {
         const email = user?.email || 'unregistered';
         const phone = form.phone.value;
         const message = form.message.value;
-
+        const photoURL = user.photoURL;
 
         const review = {
             place: _id,
@@ -24,7 +24,8 @@ const ServiceDetails = () => {
             customer: name,
             email,
             phone,
-            message
+            message,
+            photoURL
         }
 
 
@@ -58,7 +59,7 @@ const ServiceDetails = () => {
                     <div className="card-actions">
                         <p className='text-2xl text-info font-bold'>Three Days Cost: {price} tk</p>
                         <Link to='/'><button className="btn btn-primary">Home</button></Link>
-                        <Link to='/checkout'><button className="btn btn-primary">Add Service</button></Link>
+                        <Link to='/checkout'><button className="btn btn-primary">Take a Tour</button></Link>
                     </div>
                 </div>
           </div>
@@ -67,21 +68,6 @@ const ServiceDetails = () => {
 
         {/* Service Review */}
         <ServiceReview handleReview={handleReview}></ServiceReview>
-
-
-
-        {/* <form onSubmit={handleReview} className='py-5'>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 p-5'>
-                    <input name='firstName' type="text" placeholder="First Name" className="input input-bordered w-full" />
-                    <input name='lastName' type="text" placeholder="Last Name" className="input input-bordered w-full" />
-                    <input name='phone' type="text" placeholder="Your Phone" className="input input-bordered w-full" />
-                    <input name='email' type="text" placeholder="Your Email" defaultValue={user?.email} className="input input-bordered w-full" readOnly/>
-                </div>
-                <div className='p-5'>
-                    <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Please text your more details"></textarea>
-                    <input className='btn btn-info' type="submit" name="" id="" value='Review Submit'/>
-                </div>
-            </form>         */}
 
         </div>
     );
