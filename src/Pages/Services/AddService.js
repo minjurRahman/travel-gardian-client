@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const AddService = () => {
 
     const { user } = useContext(AuthContext);
+    useTitle('Add-Service')
 
     const handleReview = event =>{
         event.preventDefault();

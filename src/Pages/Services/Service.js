@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import ServiceCard from '../Shared/ServiceCard';
 
 const Service = () => {
-
+    const { loading } = useContext(AuthContext);
     const [services, setServices] = useState([]);
+    useTitle('Service')
     
     useEffect( () =>{
         fetch('https://travel-guardian-server-site.vercel.app/services')
         .then(res => res.json())
-        .then(data => setServices(data))
+        .then(data => {
+            setServices(data)
+
+        })
     } , [])
 
     return (

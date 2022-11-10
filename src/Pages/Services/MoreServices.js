@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import ServiceCard from '../Shared/ServiceCard';
 
 const MoreServices = () => {
     const [moreServices, setMoreServices] = useState([]);
+    useTitle('More-Services')
     
     useEffect( () =>{
         fetch('https://travel-guardian-server-site.vercel.app/more-services')

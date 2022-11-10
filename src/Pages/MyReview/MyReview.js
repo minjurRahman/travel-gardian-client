@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import Reviews from './Reviews';
 
 const MyReview = () => {
     const { user, logOut } = useContext(AuthContext);
     const  [reviews, setReviews] = useState([]);
-
+    useTitle('My-Reviews')
 
     useEffect( () =>{
         fetch(`https://travel-guardian-server-site.vercel.app/displayReview?email=${user?.email}`, {
