@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, Navigate, useLoaderData, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 import ReviewDisplay from './ReviewDisplay';
@@ -8,6 +8,7 @@ import ServiceReview from './ServiceReview';
 const ServiceDetails = () => {
     const { _id, title, image, details, price} = useLoaderData();
     const { user } = useContext(AuthContext);
+    const location = useLocation();
     useTitle('Service-Details')
 
     const handleReview = event =>{
@@ -71,7 +72,7 @@ const ServiceDetails = () => {
             user ?
             <ServiceReview handleReview={handleReview}></ServiceReview>
             :
-            <span className='p-3'>Please <Link to='/login'><button className='btn btn-info btn-outline '>Login</button></Link> to add review</span>
+            <span className='p-3'>Please <Link to='/login' state={{from: location}} replace><button className='btn btn-info btn-outline '>Login</button></Link> to add review</span>
 
         }
 
