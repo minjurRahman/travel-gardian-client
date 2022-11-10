@@ -5,7 +5,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
-    const { setUser, login, providerLogin } = useContext(AuthContext);
+    const { setUser, login, providerLogin, loading } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
 
     const location = useLocation();
@@ -23,8 +23,9 @@ const Login = () => {
         login(email, password)
         .then(result =>{
             const user = result.user;
-            console.log(user);
-
+            if(loading){
+                <progress className="progress w-56"></progress>
+            }
             const currentUser = {
                 email: user.email
             }
@@ -38,7 +39,6 @@ const Login = () => {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 localStorage.setItem('User-Token', data.token);
                 navigate(from, {replace: true})
                 form.reset()

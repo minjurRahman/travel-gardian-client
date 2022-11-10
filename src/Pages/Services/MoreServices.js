@@ -1,16 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 import ServiceCard from '../Shared/ServiceCard';
 
 const MoreServices = () => {
+    const { loading } = useContext(AuthContext)
     const [moreServices, setMoreServices] = useState([]);
     useTitle('More-Services')
     
     useEffect( () =>{
         fetch('https://travel-guardian-server-site.vercel.app/more-services')
         .then(res => res.json())
-        .then(data => setMoreServices(data))
+        .then(data => {
+            if(loading){
+                <progress className="progress w-56"></progress>
+            }
+            setMoreServices(data)
+        })
     } , [])
     return (
         <div className='mt-7 py-4 border rounded-lg'>

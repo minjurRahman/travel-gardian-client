@@ -4,7 +4,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 
 const SignUp = () => {
-    const { createUser, } = useContext(AuthContext)
+    const { createUser, loading } = useContext(AuthContext)
     useTitle('Sign-Up')
 
     const location = useLocation();
@@ -22,6 +22,9 @@ const SignUp = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            if(loading){
+                <progress className="progress w-56"></progress>
+            }
             navigate(from, {replace: true})
             form.reset();
         })

@@ -1,7 +1,7 @@
 import React, { } from 'react';
 
 const Reviews = ({review, handleDelete, handleStatusUpdate}) => {
-    const { _id, placeName, email, message, photoURL } = review;
+    const { _id, placeName, email, message } = review;
 
     return (
             <tr>

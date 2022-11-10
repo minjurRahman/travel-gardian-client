@@ -13,8 +13,10 @@ const Service = () => {
         fetch('https://travel-guardian-server-site.vercel.app/services')
         .then(res => res.json())
         .then(data => {
+            if(loading){
+                <progress className="progress w-56"></progress>
+            }
             setServices(data)
-
         })
     } , [])
 
@@ -32,6 +34,7 @@ const Service = () => {
                     service={service}
                     ></ServiceCard>)
                 }
+                
             </div>
             <div className='text-center'>
             <Link to='/more-services'><button className="btn btn-info">See All</button></Link>
