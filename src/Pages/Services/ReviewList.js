@@ -7,7 +7,7 @@ const ReviewList = ({rev}) => {
 
 
     useEffect( () =>{
-        fetch(`http://localhost:5000/displayReview?placeName=${placeName}`)
+        fetch(`https://travel-guardian-server-site.vercel.app/displayReview?placeName=${placeName}`)
         .then(res => res.json())
         .then(data => {
             setReview(data)

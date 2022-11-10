@@ -26,7 +26,7 @@ const Login = () => {
                 email: user.email
             }
             //Get jwt token
-            fetch('http://localhost:5000/jwt', {
+            fetch('https://travel-guardian-server-site.vercel.app/jwt', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

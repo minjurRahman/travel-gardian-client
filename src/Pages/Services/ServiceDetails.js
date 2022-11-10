@@ -28,7 +28,7 @@ const ServiceDetails = () => {
         }
 
 
-        fetch('http://localhost:5000/userReview', {
+        fetch('https://travel-guardian-server-site.vercel.app/userReview', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
