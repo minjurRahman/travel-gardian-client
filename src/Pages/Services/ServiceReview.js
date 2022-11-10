@@ -16,7 +16,7 @@ const ServiceReview = ({handleReview}) => {
                 </div>
                 <div className='p-5'>
                     <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Please text your more details"></textarea>
-                    <input className='btn btn-info' type="submit" name="" id="" value='Review Submit'/>
+                    <input className='btn btn-info mt-2' type="submit" name="" id="" value='Review Submit'/>
                 </div>
             </form>  
         </div>

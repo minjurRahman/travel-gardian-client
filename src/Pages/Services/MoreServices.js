@@ -28,6 +28,7 @@ const MoreServices = () => {
             <div className='text-center'>
             <Link to='/more-services'><button className="btn btn-info">Explore More Places</button></Link>
             </div>
+
         </div>
     );
 };
