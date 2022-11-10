@@ -116,11 +116,3 @@ However, your website **cannot** be related to your **previous assignments** or 
 7. Store JWT token in http only cookie (alternatively, feel free to store it in the Local storage for this assignment)
 9. Try to host your site on Firebase (Netlify host will need extra configuration)
 10. Try to host the server on Vercel
-
-### What to submit 
-1. Your client-side code GitHub repository
-2. Your server-side code GitHub repository
-3. Your live website link
-
-
-Have FUN! Have Patience. 

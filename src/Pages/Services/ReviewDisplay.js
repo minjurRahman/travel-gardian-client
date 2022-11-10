@@ -12,7 +12,7 @@ const ReviewDisplay = () => {
     } , [])
 
     return (
-        <div>
+        <div className='mt-4'>
             {
                 review.map(rev => <ReviewList key={rev._id} rev={rev}></ReviewList>)
             }
