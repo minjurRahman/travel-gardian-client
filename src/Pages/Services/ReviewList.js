@@ -16,14 +16,10 @@ const ReviewList = ({rev}) => {
 
     return (
         <div className='mb-4 p-4 border rounded'>
-            <div className=''>
-                <img src={photoURL?.photoURL} alt="" />
-             <ul className=" bg-base-100 w-full">
-                <li>
-                    Name: {customer}
-                    <p>Review Details: {message}</p>
-                </li>
-             </ul>
+            <div className='w-full'>
+                <img className='w-32' src={photoURL? photoURL : "https://static.vecteezy.com/system/resources/previews/002/400/532/original/young-happy-businessman-character-avatar-wearing-business-outfit-isolated-free-vector.jpg"} alt="" />
+                <p>Name: {customer}</p>
+                <p>Review Details: {message}</p>
             </div>
         </div>
     );
