@@ -1,11 +1,11 @@
 import Main from "../Layout/Main";
 import Blog from "../Pages/Blog/Blog";
-import Checkout from "../Pages/Checkout/Checkout";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/LoginRegistration/Login";
 import SignUp from "../Pages/LoginRegistration/SignUp";
 import MyReview from "../Pages/MyReview/MyReview";
 import AddService from "../Pages/Services/AddService";
+import MoreServices from "../Pages/Services/MoreServices";
 import Service from "../Pages/Services/Service";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
 
@@ -49,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: '/myreview',
                 element: <MyReview></MyReview>
+            },
+            {
+                path: '/more-services',
+                element: <MoreServices></MoreServices>
             }
 
         ]

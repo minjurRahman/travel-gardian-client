@@ -2,16 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ServiceCard from '../Shared/ServiceCard';
 
-const Service = () => {
-
-    const [services, setServices] = useState([]);
+const MoreServices = () => {
+    const [moreServices, setMoreServices] = useState([]);
     
     useEffect( () =>{
-        fetch('http://localhost:5000/services')
+        fetch('http://localhost:5000/more-services')
         .then(res => res.json())
-        .then(data => setServices(data))
+        .then(data => setMoreServices(data))
     } , [])
-
     return (
         <div className='mt-7 py-4 border'>
             <div className='text-center mb-7'>
@@ -21,7 +19,7 @@ const Service = () => {
             </div>
             <div className=''>
                 {
-                    services.map(service => <ServiceCard 
+                    moreServices.map(service => <ServiceCard 
                     key= {service.id}   //service._id
                     service={service}
                     ></ServiceCard>)
@@ -34,4 +32,4 @@ const Service = () => {
     );
 };
 
-export default Service;
+export default MoreServices;

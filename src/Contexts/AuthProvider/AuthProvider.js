@@ -66,13 +66,3 @@ const AuthProvider = ({children}) => {
 };
 
 export default AuthProvider;
-
-
-/* 
-  const handleLogOut = () =>{
-    logOut()
-    .then( () =>{})
-    .catch(error => console.error(error))
-  }
-
-*/

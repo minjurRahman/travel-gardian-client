@@ -5,7 +5,13 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
 
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+    logOut()
+    .then( () =>{})
+    .catch(error => console.error(error))
+  }
 
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
@@ -14,7 +20,7 @@ const Header = () => {
           <> 
           <li className='font-semibold'><Link to='/myreview'>My Review</Link></li>
           <li className='font-semibold'><Link to='/addservice'>Add Service</Link></li>
-          <li className='font-semibold'><Link to='/logout'>Logout</Link></li>
+          <li className='font-semibold'><button onClick={handleLogOut}>Logout</button></li>
           </>
           :
           <> 
