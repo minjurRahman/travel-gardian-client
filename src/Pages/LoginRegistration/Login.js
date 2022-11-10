@@ -37,11 +37,10 @@ const Login = () => {
             .then(data => {
                 console.log(data);
                 localStorage.setItem('User-Token', data.token);
+                navigate(from, {replace: true})
+                form.reset()
             })
-
-
-            navigate(from, {replace: true})
-            form.reset()
+            
         })
         .catch(error => {
             console.log(error.message);

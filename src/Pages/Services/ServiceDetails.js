@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
@@ -50,7 +49,7 @@ const ServiceDetails = () => {
     }
 
     return (
-        <div>
+        <div className='mb-3'>
             <div className="card card-compact w-4/5 m-auto py-20 bg-base-100 shadow-xl">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body ">
@@ -58,16 +57,21 @@ const ServiceDetails = () => {
                     <p><span className='font-bold'>Details About {title}: </span> {details}</p>
                     <div className="card-actions">
                         <p className='text-2xl text-info font-bold'>Three Days Cost: {price} tk</p>
-                        <Link to='/'><button className="btn btn-primary">Home</button></Link>
-                        <Link to='/addservice'><button className="btn btn-primary">Take a Tour</button></Link>
+                        <Link to='/'><button className="btn btn-info">Home</button></Link>
+                        <Link to='/more-services'><button className="btn btn-info">Take a Tour with me</button></Link>
                     </div>
                 </div>
           </div>
         
         <ReviewDisplay></ReviewDisplay>
 
-        {/* Service Review */}
-        <ServiceReview handleReview={handleReview}></ServiceReview>
+        {
+            user ?
+            <ServiceReview handleReview={handleReview}></ServiceReview>
+            :
+            <span className='p-3'>Please <Link to='/login'><button className='btn btn-info btn-outline '>Login</button></Link> to add review</span>
+
+        }
 
         </div>
     );

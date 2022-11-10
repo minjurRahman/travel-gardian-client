@@ -6,7 +6,7 @@ const ReviewDisplay = () => {
     const [review, setReview] = useState([]);
 
     useEffect( () =>{
-        fetch('http://localhost:5000/displayReview')
+        fetch('http://localhost:5000/displayReviews')
         .then(res => res.json())
         .then(data => setReview(data))
     } , [])
@@ -14,7 +14,7 @@ const ReviewDisplay = () => {
     return (
         <div>
             {
-                review.map(rev => <ReviewList key={rev.id} rev={rev}></ReviewList>)
+                review.map(rev => <ReviewList key={rev._id} rev={rev}></ReviewList>)
             }
         </div>
     );

@@ -15,7 +15,7 @@ const ReviewList = ({rev}) => {
     }, [placeName])
 
     return (
-        <div className='mb-4 p-4'>
+        <div className='mb-4 p-4 border rounded'>
             <div className=''>
                 <img src={photoURL?.photoURL} alt="" />
              <ul className=" bg-base-100 w-full">

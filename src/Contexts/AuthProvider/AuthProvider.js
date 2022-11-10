@@ -30,7 +30,6 @@ const AuthProvider = ({children}) => {
     //User loged or not
     useEffect( () =>{
        const unsubscribe = onAuthStateChanged(auth, currentUser =>{
-            console.log(currentUser)
             setUser(currentUser);
             setLoading(false);
         })
@@ -42,7 +41,7 @@ const AuthProvider = ({children}) => {
 
     // Log Out
     const logOut = () =>{
-        setLoading(true)
+        // setLoading(true)
         localStorage.removeItem('User-Token');
         return signOut(auth);
     }

@@ -17,10 +17,10 @@ const MyReview = () => {
             if(res.status === 401 || res.status === 403){
                return logOut();
             }
-           return res.json()
+           return res.json();
         })
         .then(data => {
-            setReviews(data)
+            setReviews(data);
         })
      }, [user?.email, logOut])
 
