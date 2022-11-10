@@ -59,7 +59,7 @@ const ServiceDetails = () => {
                     <div className="card-actions">
                         <p className='text-2xl text-info font-bold'>Three Days Cost: {price} tk</p>
                         <Link to='/'><button className="btn btn-primary">Home</button></Link>
-                        <Link to='/checkout'><button className="btn btn-primary">Take a Tour</button></Link>
+                        <Link to='/addservice'><button className="btn btn-primary">Take a Tour</button></Link>
                     </div>
                 </div>
           </div>

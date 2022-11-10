@@ -26,7 +26,7 @@ const MoreServices = () => {
                 }
             </div>
             <div className='text-center'>
-            <Link to='/more-services'><button className="btn btn-info">Explore More Places</button></Link>
+            <Link to='/addservice'><button className="btn btn-info">Explore More Places</button></Link>
             </div>
 
         </div>
