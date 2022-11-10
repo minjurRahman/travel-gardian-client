@@ -13,7 +13,7 @@ const MoreServices = () => {
         .then(data => setMoreServices(data))
     } , [])
     return (
-        <div className='mt-7 py-4 border'>
+        <div className='mt-7 py-4 border rounded-lg'>
             <div className='text-center mb-7'>
                 <h1 className='text-5xl py-3 font-bold text-info '>Services</h1>
                 <h2 className='text-4xl font-bold'>Take a Tour with us</h2>
@@ -28,7 +28,8 @@ const MoreServices = () => {
                 }
             </div>
             <div className='text-center'>
-            <Link to='/addservice'><button className="btn btn-info">Explore More Places</button></Link>
+            <Link to='/more-services'><button className="btn btn-info">Explore More Places</button></Link>
+            <Link to='/addservice'><button className="btn ml-2 btn-info">Add Services</button></Link>
             </div>
 
         </div>

@@ -19,7 +19,7 @@ const Service = () => {
     } , [])
 
     return (
-        <div className='mt-7 py-4 border'>
+        <div className='mt-7 py-4 border rounded-lg'>
             <div className='text-center mb-7'>
                 <h1 className='text-5xl py-3 font-bold text-info '>Services</h1>
                 <h2 className='text-4xl font-bold'>Take a Tour with us</h2>
