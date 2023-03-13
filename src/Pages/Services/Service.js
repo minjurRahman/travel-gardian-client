@@ -10,7 +10,7 @@ const Service = () => {
     useTitle('Service')
     
     useEffect( () =>{
-        fetch('https://travel-guardian-server-site.vercel.app/services')
+        fetch('http://localhost:5000/services')
         .then(res => res.json())
         .then(data => {
             if(loading){
@@ -27,7 +27,7 @@ const Service = () => {
                 <h2 className='text-4xl font-bold'>Take a Tour with us</h2>
                 <p className='py-3'>We are offer you to get a tour with us. Here we give you a three days package for a tour in any where in Bangladesh.</p>
             </div>
-            <div className=''>
+            <div className='' data-aos="zoom-in-down" data-aos-duration="2000">
                 {
                     services.map(service => <ServiceCard 
                     key= {service.id}   //service._id

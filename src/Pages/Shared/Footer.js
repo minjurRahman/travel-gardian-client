@@ -2,7 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer p-12 bg-base-300 text-base-content">
+        <footer className="footer p-12 bg-base-300 text-base-content mb-7" data-aos="fade-up"
+        data-aos-duration="1000">
         <div>
           <span className="footer-title">Services</span> 
           <a className="link link-hover">Branding</a> 

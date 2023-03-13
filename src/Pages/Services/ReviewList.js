@@ -4,10 +4,10 @@ const ReviewList = ({rev}) => {
     // console.log(rev)
     const { placeName, customer, message, photoURL  } = rev;
     const  [review, setReview] = useState({});
-
+    console.log(review)
 
     useEffect( () =>{
-        fetch(`https://travel-guardian-server-site.vercel.app/displayReview?placeName=${placeName}`)
+        fetch(`http://localhost:5000/displayReview?placeName=${placeName}`)
         .then(res => res.json())
         .then(data => {
             setReview(data)
@@ -21,6 +21,8 @@ const ReviewList = ({rev}) => {
                 <p>Name: {customer}</p>
                 <p>Review Details: {message}</p>
             </div>
+            
+        
         </div>
     );
 };

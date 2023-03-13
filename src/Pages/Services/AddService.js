@@ -27,7 +27,7 @@ const AddService = () => {
         }
 
 
-        fetch('https://travel-guardian-server-site.vercel.app/services', {
+        fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

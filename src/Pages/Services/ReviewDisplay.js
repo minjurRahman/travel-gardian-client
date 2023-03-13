@@ -6,7 +6,7 @@ const ReviewDisplay = () => {
     const [review, setReview] = useState([]);
 
     useEffect( () =>{
-        fetch('https://travel-guardian-server-site.vercel.app/displayReviews')
+        fetch('http://localhost:5000/displayReviews')
         .then(res => res.json())
         .then(data => setReview(data))
     } , [])

@@ -10,7 +10,7 @@ const MoreServices = () => {
     useTitle('More-Services')
     
     useEffect( () =>{
-        fetch('https://travel-guardian-server-site.vercel.app/more-services')
+        fetch('http://localhost:5000/more-services')
         .then(res => res.json())
         .then(data => {
             if(loading){

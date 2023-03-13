@@ -19,6 +19,7 @@ const ServiceDetails = () => {
         const phone = form.phone.value;
         const message = form.message.value;
         const photoURL = user.photoURL;
+        const createDate = new Date();
 
         const review = {
             place: _id,
@@ -27,11 +28,12 @@ const ServiceDetails = () => {
             email,
             phone,
             message,
-            photoURL
+            photoURL,
+            createDate
         }
 
 
-        fetch('https://travel-guardian-server-site.vercel.app/userReview', {
+        fetch('http://localhost:5000/userReview', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -1,5 +1,6 @@
 import Main from "../Layout/Main";
 import Blog from "../Pages/Blog/Blog";
+import Contact from "../Pages/ContactUs/Contact";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/LoginRegistration/Login";
 import SignUp from "../Pages/LoginRegistration/SignUp";
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({params}) => fetch(`https://travel-guardian-server-site.vercel.app/services/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/addservice',
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
             {
                 path: '/more-services',
                 element: <MoreServices></MoreServices>
+            },
+            {
+                path: '/contact-us',
+                element: <Contact></Contact>
             }
 
         ]

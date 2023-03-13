@@ -9,7 +9,7 @@ const MyReview = () => {
     useTitle('My-Reviews')
 
     useEffect( () =>{
-        fetch(`https://travel-guardian-server-site.vercel.app/displayReview?email=${user?.email}`, {
+        fetch(`http://localhost:5000/displayReview?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('User-Token')}`
             }
@@ -29,7 +29,7 @@ const MyReview = () => {
      const handleDelete = id =>{
         const proceed = window.confirm('Are you sure, you want to delete this review?')
         if(proceed){
-            fetch(`https://travel-guardian-server-site.vercel.app/userReview/${id}`, {
+            fetch(`http://localhost:5000/userReview/${id}`, {
                 method: 'DELETE',
             })
             .then(res => res.json())
@@ -45,7 +45,7 @@ const MyReview = () => {
     }
 
     const handleStatusUpdate = id =>{
-        fetch(`https://travel-guardian-server-site.vercel.app/userReview/${id}`, {
+        fetch(`http://localhost:5000/userReview/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
